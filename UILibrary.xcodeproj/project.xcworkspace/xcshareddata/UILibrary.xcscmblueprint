@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "4E1EBA14B53D7074F49F3AC5DA3DE3B14CE914C2",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "4E1EBA14B53D7074F49F3AC5DA3DE3B14CE914C2" : 9223372036854775807,
+    "37DC95545EE3804F88CB40D78E314DFD3EBD0B8B" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "B699A2A6-B5A0-47E4-A329-A2DA6F9C4B1B",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "4E1EBA14B53D7074F49F3AC5DA3DE3B14CE914C2" : "UILibrary\/",
+    "37DC95545EE3804F88CB40D78E314DFD3EBD0B8B" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "UILibrary",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "UILibrary.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/yjb94\/MyXcodeProjects.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "37DC95545EE3804F88CB40D78E314DFD3EBD0B8B"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/yjb94\/CamoUI.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "4E1EBA14B53D7074F49F3AC5DA3DE3B14CE914C2"
+    }
+  ]
+}

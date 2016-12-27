@@ -10,11 +10,25 @@ import UIKit
 
 class ViewController: UIViewController
 {
+    var button:CamoUButton!
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
+//        let button = UIButton(type: .system)
+        
+        button = CamoUButton(frame: CGRect(x: 0, y: 0, width: 100, height: 100) , normal: "play_button")
+//        button.resize(size: 10, 10)
+        button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
+//        button.animate = true
+        
+        self.view.addSubview(button)
     }
-
+    func buttonAction(id:AnyObject? = nil)
+    {
+    }
+    
     override func didReceiveMemoryWarning()
     {
         super.didReceiveMemoryWarning()
