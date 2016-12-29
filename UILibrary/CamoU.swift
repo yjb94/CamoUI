@@ -14,8 +14,8 @@ class CamoU: NSObject
     {
         let rawValue:Int
         
-        static let horizontal   = Align(rawValue: 0)
-        static let vertical     = Align(rawValue: 1 << 0)
-        static let center       = Align(rawValue: 1 << 1)
+        static let horizontal   = Align(rawValue: 1 << 0)
+        static let vertical     = Align(rawValue: 1 << 1)
+        static let center       = Align(rawValue: 1 << 2)
     }
 }

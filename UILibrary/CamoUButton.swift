@@ -24,6 +24,18 @@ class CamoUButton: UIButton
         }
     }
     
+    override var isSelected: Bool {
+        didSet {
+            if isSelected {
+                self.backgroundColor = UIColor.init(white: 0, alpha: 0.2)
+            }
+            else
+            {
+                self.backgroundColor = UIColor.clear
+            }
+        }
+    }
+    
     @IBInspectable
     public var animate_mode: AnimateMode = .alpha
     public var animate_duration:TimeInterval = 0.15
@@ -34,32 +46,28 @@ class CamoUButton: UIButton
         case scale        //changes scale with animation
     }
 
-    init(frame: CGRect, normal:String = "", highlight:String = "", disable:String = "")
+    init(frame: CGRect, normal:String = "", highlight:String = "", disable:String = "", animate:Bool = true, animate_mode:AnimateMode = .alpha)
     {
         super.init(frame: frame)
         configure()
 
         setImages(normal: UIImage(named:normal), highlight: UIImage(named:highlight), disable: UIImage(named:disable))
-        
-        settingsAfter()
+
+        defer {
+            self.animate_mode = animate_mode
+            self.animate = animate
+        }
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         configure()
-        settingsAfter()
     }
     
     func configure() {
         //disables button getting black when ...
         adjustsImageWhenDisabled = false
         adjustsImageWhenHighlighted = false
-    }
-    
-    func settingsAfter()
-    {
-        //set animation
-        animate = true
     }
     
     func setImages(normal:UIImage?, highlight:UIImage? = nil, disable:UIImage? = nil)
