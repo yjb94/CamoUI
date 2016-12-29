@@ -20,10 +20,14 @@ class ViewController: UIViewController
         
         button = CamoUButton(frame: CGRect(x: 0, y: 0, width: 100, height: 100) , normal: "play_button")
 //        button.resize(size: 10, 10)
-        button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
+//        button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
 //        button.animate = true
         
-        self.view.addSubview(button)
+//        self.view.addSubview(button)
+        
+        
+        let a = CamoURadioButton(frame: CGRect(x: 0, y: 0, width: 1000, height: 1000), buttons: [button, button, button], align:.vertical)
+        self.view.addSubview(a)
     }
     func buttonAction(id:AnyObject? = nil)
     {

@@ -15,6 +15,8 @@
 		4DD29D9D1E12BABD002F2911 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DD29D9B1E12BABD002F2911 /* LaunchScreen.storyboard */; };
 		4DD29DA71E12C3A0002F2911 /* CamoUButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD29DA61E12C3A0002F2911 /* CamoUButton.swift */; };
 		4DD29DA91E12D0D0002F2911 /* CamoUImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD29DA81E12D0D0002F2911 /* CamoUImage.swift */; };
+		4DD29DAB1E153056002F2911 /* CamoURadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD29DAA1E153056002F2911 /* CamoURadioButton.swift */; };
+		4DD29DAD1E153162002F2911 /* CamoU.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD29DAC1E153162002F2911 /* CamoU.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		4DD29D9E1E12BABD002F2911 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4DD29DA61E12C3A0002F2911 /* CamoUButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CamoUButton.swift; sourceTree = "<group>"; };
 		4DD29DA81E12D0D0002F2911 /* CamoUImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CamoUImage.swift; sourceTree = "<group>"; };
+		4DD29DAA1E153056002F2911 /* CamoURadioButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CamoURadioButton.swift; sourceTree = "<group>"; };
+		4DD29DAC1E153162002F2911 /* CamoU.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CamoU.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +66,9 @@
 			children = (
 				4DD29D8F1E12BABD002F2911 /* AppDelegate.swift */,
 				4DD29D911E12BABD002F2911 /* ViewController.swift */,
+				4DD29DAC1E153162002F2911 /* CamoU.swift */,
 				4DD29DA61E12C3A0002F2911 /* CamoUButton.swift */,
+				4DD29DAA1E153056002F2911 /* CamoURadioButton.swift */,
 				4DD29DA81E12D0D0002F2911 /* CamoUImage.swift */,
 				4DD29D931E12BABD002F2911 /* Main.storyboard */,
 				4DD29D991E12BABD002F2911 /* Assets.xcassets */,
@@ -146,8 +152,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				4DD29D981E12BABD002F2911 /* UILibrary.xcdatamodeld in Sources */,
+				4DD29DAB1E153056002F2911 /* CamoURadioButton.swift in Sources */,
 				4DD29DA71E12C3A0002F2911 /* CamoUButton.swift in Sources */,
 				4DD29D921E12BABD002F2911 /* ViewController.swift in Sources */,
+				4DD29DAD1E153162002F2911 /* CamoU.swift in Sources */,
 				4DD29DA91E12D0D0002F2911 /* CamoUImage.swift in Sources */,
 				4DD29D901E12BABD002F2911 /* AppDelegate.swift in Sources */,
 			);

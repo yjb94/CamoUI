@@ -25,10 +25,10 @@ class CamoUButton: UIButton
     }
     
     @IBInspectable
-    public var animate_mode: CamoUButtonMode = .alpha
+    public var animate_mode: AnimateMode = .alpha
     public var animate_duration:TimeInterval = 0.15
     
-    public enum CamoUButtonMode
+    public enum AnimateMode
     {
         case alpha        //changes alpha with animation
         case scale        //changes scale with animation
