@@ -25,9 +25,29 @@ class ViewController: UIViewController
         
 //        self.view.addSubview(button)
         
+        let a = CamoUButton(frame: CGRect(x: 0, y: 0, width: 100, height: 100) , normal: "play_button")
+        let b = CamoUButton(frame: CGRect(x: 0, y: 0, width: 50, height: 50) , normal: "play_button")
+        let c = CamoUButton(frame: CGRect(x: 0, y: 0, width: 10, height: 10) , normal: "play_button")
         
-        let a = CamoURadioButton(frame: CGRect(x: 0, y: 0, width: 1000, height: 1000), buttons: [button, button, button], align:.vertical)
-        self.view.addSubview(a)
+        let radio = CamoURadioButton(frame: CGRect(x: 0, y: 0, width: 0, height: 0), buttons: [a, b, c])
+        radio.autoResize()
+        self.view.addSubview(radio)
+        
+//        let d = CamoUButton(frame: CGRect(x: 0, y: 100, width: 100, height: 100) , normal: "play_button")
+//        let e = CamoUButton(frame: CGRect(x: 0, y: 100, width: 50, height: 50) , normal: "play_button")
+//        let f = CamoUButton(frame: CGRect(x: 0, y: 100, width: 10, height: 10) , normal: "play_button")
+//        
+//        let radio2 = CamoURadioButton(frame: CGRect(x: 0, y: 0, width: 0, height: 0), buttons: [f, d, e])
+//        radio2.autoResize()
+//        self.view.addSubview(radio2)
+//        
+//        let g = CamoUButton(frame: CGRect(x: 0, y: 200, width: 100, height: 100) , normal: "play_button")
+//        let h = CamoUButton(frame: CGRect(x: 0, y: 200, width: 50, height: 50) , normal: "play_button")
+//        let i = CamoUButton(frame: CGRect(x: 0, y: 200, width: 10, height: 10) , normal: "play_button")
+//        
+//        let radio3 = CamoURadioButton(frame: CGRect(x: 0, y: 0, width: 0, height: 0), buttons: [h, i, g])
+//        radio3.autoResize()
+//        self.view.addSubview(radio3)
     }
     func buttonAction(id:AnyObject? = nil)
     {

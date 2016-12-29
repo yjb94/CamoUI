@@ -10,9 +10,12 @@ import UIKit
 
 class CamoU: NSObject
 {
-    public enum Align
+    struct Align : OptionSet
     {
-        case horizontal
-        case vertical
+        let rawValue:Int
+        
+        static let horizontal   = Align(rawValue: 0)
+        static let vertical     = Align(rawValue: 1 << 0)
+        static let center       = Align(rawValue: 1 << 1)
     }
 }

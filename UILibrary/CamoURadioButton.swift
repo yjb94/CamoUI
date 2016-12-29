@@ -10,55 +10,62 @@ import UIKit
 
 class CamoURadioButton: UIView
 {
-    public var buttons:[CamoUButton]? {
+    public var buttons:[UIButton]? {
         didSet {
+            removeAllButtonsFromChild()
             addAllButtonsToChild()
-            resizeAllButtons()
         }
     }
     public var margin:CGFloat = 10.0 {
         didSet {
-            resizeAllButtons()
-        }
-    }
-    public var align:CamoU.Align = .horizontal {
-        didSet {
-            resizeAllButtons()
+            autoResize()
         }
     }
     
-    
-    init(frame: CGRect, buttons:[CamoUButton]? = nil, align:CamoU.Align = .horizontal)
+    init(frame: CGRect, buttons:[UIButton]!)
     {
         super.init(frame: frame)
         
         defer {
             self.buttons = buttons
-            self.align = align
         }
     }
-    
-    func resizeAllButtons()
+
+    func autoResize(align:CamoU.Align = [.horizontal, .center])
     {
         guard let buttons_to_resize = buttons else { buttons = nil; return; }
         
-        var last_size:CGFloat = 0
-        for button in buttons_to_resize
+        //find out the largest size(w,h) of items
+        var largest = CGSize()
+        for button in buttons_to_resize {
+            if largest.width < button.frame.size.width {
+                largest.width = button.frame.size.width
+            }
+            if largest.height < button.frame.size.height {
+                largest.height = button.frame.size.height
+            }
+        }
+        
+        for (index, button) in buttons_to_resize.enumerated()
         {
             var resized_point = button.frame.origin
             
-            switch self.align
+            if align.contains(.horizontal)
             {
-            case .horizontal:
-                resized_point.x = last_size + self.margin
-                last_size = resized_point.x + button.frame.width
-                break;
-            case .vertical:
-                resized_point.y = last_size + self.margin
-                last_size = resized_point.y + button.frame.height
-                break;
+                resized_point.x = (largest.width + self.margin) * CGFloat(index)
             }
+            else if align.contains(.vertical)
+            {
+                resized_point.y = (largest.height + self.margin) * CGFloat(index)
+            }
+            
             button.frame.origin = resized_point
+            
+            if align.contains(.center)
+            {
+                button.center.x = resized_point.x + largest.width/2
+                button.center.y = resized_point.y + largest.height/2
+            }
         }
     }
     
@@ -72,7 +79,17 @@ class CamoURadioButton: UIView
         }
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    func removeAllButtonsFromChild()
+    {
+        for view in self.subviews {
+            if view is UIButton {
+                view.removeFromSuperview()
+            }
+        }
+    }
+    
+    required init?(coder aDecoder: NSCoder)
+    {
         super.init(coder: aDecoder)
     }
 }
