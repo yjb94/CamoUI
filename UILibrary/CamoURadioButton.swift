@@ -29,6 +29,10 @@ class CamoURadioButton: UIView
         defer {
             self.buttons = buttons
         }
+        self.layer.cornerRadius = 1
+        self.layer.borderWidth = 0.4
+        self.layer.borderColor = UIColor.init(netHex: 0x00b2b2).cgColor
+        self.layer.masksToBounds = true
     }
 
     func autoResize(align:CamoU.Align = [.horizontal, .center])
@@ -67,6 +71,11 @@ class CamoURadioButton: UIView
                 button.center.y = resized_point.y + largest.height/2
             }
         }
+        
+        let total_width = align.contains(.horizontal) ? (largest.width + self.margin) * CGFloat(buttons_to_resize.count) : largest.width
+        let total_height = align.contains(.vertical) ? (largest.height + self.margin) * CGFloat(buttons_to_resize.count) : largest.height
+
+        self.frame.size = CGSize(width: total_width, height: total_height)
     }
     
     func addAllButtonsToChild()
