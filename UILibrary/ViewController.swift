@@ -31,6 +31,7 @@ class ViewController: UIViewController
         
         let radio = CamoURadioButton(frame: CGRect(x: 0, y: 0, width: 0, height: 0), buttons: [a, b, c])
         radio.autoResize()
+        radio.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
         self.view.addSubview(radio)
         
 //        let d = CamoUButton(frame: CGRect(x: 0, y: 100, width: 100, height: 100) , normal: "play_button")
@@ -49,7 +50,7 @@ class ViewController: UIViewController
 //        radio3.autoResize()
 //        self.view.addSubview(radio3)
     }
-    func buttonAction(id:AnyObject? = nil)
+    func buttonAction(id:UIButton)
     {
     }
     

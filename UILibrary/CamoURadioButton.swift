@@ -29,6 +29,7 @@ class CamoURadioButton: UIView
         defer {
             self.buttons = buttons
         }
+        
         self.layer.cornerRadius = 1
         self.layer.borderWidth = 0.4
         self.layer.borderColor = UIColor.init(netHex: 0x00b2b2).cgColor
@@ -50,9 +51,10 @@ class CamoURadioButton: UIView
             }
         }
         
+        // resize buttons
         for (index, button) in buttons_to_resize.enumerated()
         {
-            var resized_point = button.frame.origin
+            var resized_point = CGPoint(x: 0, y: 0)
             
             if align.contains(.horizontal)
             {
@@ -72,20 +74,26 @@ class CamoURadioButton: UIView
             }
         }
         
+        // resize whole frame
         let total_width = align.contains(.horizontal) ? (largest.width + self.margin) * CGFloat(buttons_to_resize.count) : largest.width
         let total_height = align.contains(.vertical) ? (largest.height + self.margin) * CGFloat(buttons_to_resize.count) : largest.height
 
         self.frame.size = CGSize(width: total_width, height: total_height)
     }
     
+    func addTarget(_ target: Any?, action: Selector, for controlEvents: UIControlEvents)
+    {
+        guard let buttons_to_add = buttons else { buttons = nil; return; }
+        buttons_to_add.enumerated().forEach() { index, button in
+            button.tag = index
+            button.addTarget(target, action: action, for: controlEvents)
+        }
+    }
+    
     func addAllButtonsToChild()
     {
         guard let buttons_to_add = buttons else { buttons = nil; return; }
-        
-        for button in buttons_to_add
-        {
-            self.addSubview(button)
-        }
+        buttons_to_add.forEach() { button in self.addSubview(button) }
     }
     
     func removeAllButtonsFromChild()
