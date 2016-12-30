@@ -21,13 +21,35 @@ class CamoURadioButton: UIView
             autoResize()
         }
     }
+    public var _select:Int = -1
+    public var select:Int {
+        get {
+            guard buttons != nil else { return -1; }
+            return self.select
+        }
+        set(index) {
+            if index == _select { return; }
+            guard let buttons_to_filter = buttons else { buttons = nil; return; }
+            //filters buttons without tag
+            // -- or you can just deselect every button and then select sender button
+            let buttons_filtered = buttons_to_filter.filter(){ (button:UIButton) -> (Bool) in
+                if button.tag == index { button.isSelected = true; return false }
+                return true
+            }
+            
+            //deselect buttons
+            buttons_filtered.forEach() { buttons in buttons.isSelected = false }
+            _select = index
+        }
+    }
     
-    init(frame: CGRect, buttons:[UIButton]!)
+    init(frame: CGRect, buttons:[UIButton]!, select:Int = 0)
     {
         super.init(frame: frame)
         
         defer {
             self.buttons = buttons
+            self.select = select
         }
     }
 
@@ -107,18 +129,7 @@ class CamoURadioButton: UIView
     
     func onButtonDown(sender:UIButton)
     {
-        guard let buttons_to_filter = buttons else { buttons = nil; return; }
-        //filters buttons without tag
-            // -- or you can just deselect every button and then select sender button
-        let buttons_filtered = buttons_to_filter.filter(){ (button:UIButton) -> (Bool) in
-            if button.tag == sender.tag { return false }
-            return true
-        }
-        
-        //deselect buttons
-        buttons_filtered.forEach() { buttons in buttons.isSelected = false }
-        //select button
-        sender.isSelected = true
+        select = sender.tag
     }
     
     required init?(coder aDecoder: NSCoder)

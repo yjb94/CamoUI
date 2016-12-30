@@ -17,9 +17,7 @@ class CamoUButton: UIButton
                 self.addTarget(self, action: #selector(onTouchDown), for: .touchDown)
             }
             else {
-                self.removeTarget(self, action: #selector(onTouchDown), for: .touchDown)
-                self.removeTarget(self, action: #selector(onTouchUp), for: .touchUpOutside)
-                self.removeTarget(self, action: #selector(onTouchUp), for: .touchUpInside)
+                removeTargets()
             }
         }
     }
@@ -90,10 +88,11 @@ class CamoUButton: UIButton
     
     func onTouchDown(sender:UIButton)
     {
+        if !animate { return }
+        
         self.addTarget(self, action: #selector(onTouchUp), for: .touchUpOutside)
         self.addTarget(self, action: #selector(onTouchUp), for: .touchUpInside)
         
-        if !animate { return }
         
         switch animate_mode
         {
@@ -107,6 +106,13 @@ class CamoUButton: UIButton
             })
             break
         }
+    }
+    
+    func removeTargets()
+    {
+        self.removeTarget(self, action: #selector(onTouchDown), for: .touchDown)
+        self.removeTarget(self, action: #selector(onTouchUp), for: .touchUpOutside)
+        self.removeTarget(self, action: #selector(onTouchUp), for: .touchUpInside)
     }
     
     func onTouchUp(sender:UIButton)

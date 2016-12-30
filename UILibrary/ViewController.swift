@@ -26,9 +26,13 @@ class ViewController: UIViewController
         let b = CamoUButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30) , normal: "play_button", animate: false, buttons_autoset:true)
         let c = CamoUButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30) , normal: "play_button", animate: false, buttons_autoset:true)
         
-        let radio = CamoURadioButton(frame: CGRect(x: 0, y: 50, width: 0, height: 0), buttons: [a, b, c])
+        let d = CamoUTabButton(frame: CGRect(x: 0, y: 100, width: 30, height: 30) , normal: "play_button")
+        d.animate = false
+        self.view.addSubview(d)
+        
+        let radio = CamoURadioButton(frame: CGRect(x: 0, y: 50, width: 0, height: 0), buttons: [a, b, c, d])
         radio.autoResize()
-        radio.addTarget(self, action: #selector(buttonAction))
+//        radio.addTarget(self, action: #selector(buttonAction))
         self.view.addSubview(radio)
     }
     func buttonAction(sender:UIButton)
