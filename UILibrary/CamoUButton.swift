@@ -24,18 +24,6 @@ class CamoUButton: UIButton
         }
     }
     
-    override var isSelected: Bool {
-        didSet {
-            if isSelected {
-                self.backgroundColor = UIColor.init(white: 0, alpha: 0.2)
-            }
-            else
-            {
-                self.backgroundColor = UIColor.clear
-            }
-        }
-    }
-    
     @IBInspectable
     public var animate_mode: AnimateMode = .alpha
     public var animate_duration:TimeInterval = 0.15
@@ -46,16 +34,21 @@ class CamoUButton: UIButton
         case scale        //changes scale with animation
     }
 
-    init(frame: CGRect, normal:String = "", highlight:String = "", disable:String = "", animate:Bool = true, animate_mode:AnimateMode = .alpha)
+    init(frame: CGRect, normal:String = "", animate:Bool = true, buttons_autoset:Bool = false, animate_mode:AnimateMode = .alpha)
     {
         super.init(frame: frame)
         configure()
 
-        setImages(normal: UIImage(named:normal), highlight: UIImage(named:highlight), disable: UIImage(named:disable))
+        setImagesFor(UIImage(named:normal))
 
         defer {
             self.animate_mode = animate_mode
             self.animate = animate
+        }
+        
+        if buttons_autoset
+        {
+            autoSetButtonsWith(UIImage(named:normal))
         }
     }
     
@@ -70,18 +63,30 @@ class CamoUButton: UIButton
         adjustsImageWhenHighlighted = false
     }
     
-    func setImages(normal:UIImage?, highlight:UIImage? = nil, disable:UIImage? = nil)
+    func setImagesFor(_ normal:UIImage?, for state: UIControlState = .normal)
     {
         guard let normal = normal else { return }
-        self.setBackgroundImage(normal, for: .normal)
-        
-        guard let highlight = highlight else { return }
-        self.setBackgroundImage(highlight, for: .highlighted)
-        
-        guard let disable = disable else { return }
-        self.setBackgroundImage(disable, for: .disabled)
+        self.setBackgroundImage(normal, for: state)
     }
     
+    func autoSetButtonsWith(_ normal:UIImage?)
+    {
+        guard let normal = normal else { return }
+        //normal
+        self.setBackgroundImage(normal, for: .normal)
+        
+        //selected
+        let selected = normal.alpha(value: 0.2)
+        self.setBackgroundImage(selected, for: .selected)
+        
+        //highlighted
+        let higlighted = normal.alpha(value: 0.7)
+        self.setBackgroundImage(higlighted, for: .highlighted)
+        
+        //disabled
+        let disabled = normal.noir()
+        self.setBackgroundImage(disabled, for: .disabled)
+    }
     
     func onTouchDown(sender:UIButton)
     {

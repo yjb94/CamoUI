@@ -16,39 +16,20 @@ class ViewController: UIViewController
     {
         super.viewDidLoad()
         
-//        let button = UIButton(type: .system)
+//        let a  = UIButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
+//        a.setTitleColor(UIColor.black, for: .normal)
+//        a.setTitle("temptitle", for: .normal)
+//        a.setTitle("hightht", for: .selected)
+//        a.sizeToFit()
         
-        button = CamoUButton(frame: CGRect(x: 0, y: 0, width: 100, height: 100) , normal: "play_button")
-//        button.resize(size: 10, 10)
-//        button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
-//        button.animate = true
-        
-//        self.view.addSubview(button)
-        
-        let a = CamoUButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30) , normal: "play_button", animate: false)
-        let b = CamoUButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30) , normal: "play_button", animate: false)
-        let c = CamoUButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30) , normal: "play_button", animate: false)
+        let a = CamoUButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30) , normal: "play_button", animate: true, buttons_autoset:true, animate_mode: .scale)
+        let b = CamoUButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30) , normal: "play_button", animate: false, buttons_autoset:true)
+        let c = CamoUButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30) , normal: "play_button", animate: false, buttons_autoset:true)
         
         let radio = CamoURadioButton(frame: CGRect(x: 0, y: 50, width: 0, height: 0), buttons: [a, b, c])
-        radio.autoResize(.vertical)
+        radio.autoResize()
         radio.addTarget(self, action: #selector(buttonAction))
         self.view.addSubview(radio)
-        
-//        let d = CamoUButton(frame: CGRect(x: 0, y: 100, width: 100, height: 100) , normal: "play_button")
-//        let e = CamoUButton(frame: CGRect(x: 0, y: 100, width: 50, height: 50) , normal: "play_button")
-//        let f = CamoUButton(frame: CGRect(x: 0, y: 100, width: 10, height: 10) , normal: "play_button")
-//        
-//        let radio2 = CamoURadioButton(frame: CGRect(x: 0, y: 0, width: 0, height: 0), buttons: [f, d, e])
-//        radio2.autoResize()
-//        self.view.addSubview(radio2)
-//        
-//        let g = CamoUButton(frame: CGRect(x: 0, y: 200, width: 100, height: 100) , normal: "play_button")
-//        let h = CamoUButton(frame: CGRect(x: 0, y: 200, width: 50, height: 50) , normal: "play_button")
-//        let i = CamoUButton(frame: CGRect(x: 0, y: 200, width: 10, height: 10) , normal: "play_button")
-//        
-//        let radio3 = CamoURadioButton(frame: CGRect(x: 0, y: 0, width: 0, height: 0), buttons: [h, i, g])
-//        radio3.autoResize()
-//        self.view.addSubview(radio3)
     }
     func buttonAction(sender:UIButton)
     {

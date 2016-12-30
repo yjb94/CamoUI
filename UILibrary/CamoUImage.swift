@@ -61,4 +61,26 @@ extension UIImage
         
         return cropped
     }
+    
+    func alpha(value:CGFloat)->UIImage
+    {
+        UIGraphicsBeginImageContextWithOptions(size, false, scale)
+        draw(at: CGPoint.zero, blendMode: .normal, alpha: value)
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return newImage!
+        
+    }
+    
+    func noir() -> UIImage
+    {
+        let currentFilter = CIFilter(name: "CIPhotoEffectNoir")
+        
+        currentFilter!.setValue(CIImage(image: self), forKey: kCIInputImageKey)
+        let output = currentFilter!.outputImage
+        let context = CIContext(options: nil)
+        let cgimg = context.createCGImage(output!,from: output!.extent)
+        let processedImage = UIImage(cgImage: cgimg!)
+        return processedImage
+    }
 }
