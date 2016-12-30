@@ -1,5 +1,5 @@
 # CamoUI
-UI Libraries for iOS / Swift
+UI Library for iOS / Swift
 
 any contributes are in welcome!
 
