@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D560D591E213A2B00DFB600 /* CamoULabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D560D581E213A2B00DFB600 /* CamoULabel.swift */; };
 		4DD29D901E12BABD002F2911 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD29D8F1E12BABD002F2911 /* AppDelegate.swift */; };
 		4DD29D921E12BABD002F2911 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD29D911E12BABD002F2911 /* ViewController.swift */; };
 		4DD29D951E12BABD002F2911 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DD29D931E12BABD002F2911 /* Main.storyboard */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4D560D581E213A2B00DFB600 /* CamoULabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CamoULabel.swift; sourceTree = "<group>"; };
 		4DD29D8C1E12BABD002F2911 /* UILibrary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UILibrary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DD29D8F1E12BABD002F2911 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4DD29D911E12BABD002F2911 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 				4DD29D8F1E12BABD002F2911 /* AppDelegate.swift */,
 				4DD29D911E12BABD002F2911 /* ViewController.swift */,
 				4DD29DAC1E153162002F2911 /* CamoU.swift */,
+				4D560D581E213A2B00DFB600 /* CamoULabel.swift */,
 				4DD29DA61E12C3A0002F2911 /* CamoUButton.swift */,
 				4DD29DB21E16FA0E002F2911 /* CamoUTabButton.swift */,
 				4DD29DAA1E153056002F2911 /* CamoURadioButton.swift */,
@@ -163,6 +166,7 @@
 				4DD29D921E12BABD002F2911 /* ViewController.swift in Sources */,
 				4DD29DAD1E153162002F2911 /* CamoU.swift in Sources */,
 				4DD29DA91E12D0D0002F2911 /* CamoUImage.swift in Sources */,
+				4D560D591E213A2B00DFB600 /* CamoULabel.swift in Sources */,
 				4DD29DB31E16FA0E002F2911 /* CamoUTabButton.swift in Sources */,
 				4DD29D901E12BABD002F2911 /* AppDelegate.swift in Sources */,
 				4DD29DAF1E15751F002F2911 /* CamoUColor.swift in Sources */,
